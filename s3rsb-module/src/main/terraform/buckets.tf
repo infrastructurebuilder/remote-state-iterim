@@ -15,7 +15,7 @@ resource "aws_kms_key" "encryptionkey" {
 }
 
 resource "aws_s3_bucket" "logbucket" {
-  bucket = "${var.thisbucket}-log"
+  bucket = "rsb-${var.thisbucket}-log"
   acl    = "log-delivery-write"
 
   tags = {
@@ -72,7 +72,7 @@ resource "aws_s3_bucket" "logbucket" {
 
 
 resource "aws_s3_bucket" "rsbbucket" {
-  bucket = "${var.thisbucket}"
+  bucket = "rsb-${var.thisbucket}"
   acl    = "private"
 
   tags = {
