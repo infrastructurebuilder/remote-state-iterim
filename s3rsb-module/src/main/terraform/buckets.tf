@@ -2,21 +2,21 @@ resource "aws_kms_key" "encryptionkey" {
   description             = "${var.thisbucket} Encryption Key"
   deletion_window_in_days = 30
   enable_key_rotation     = true
-  tags = {
-    Name        = "${var.thisbucket} Encryption Key"
-    Owner       = "${var.owner}"
-    Purpose     = "Encryption Key for ${var.thisproject}"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
-  }
+  # tags = {
+  #   Name        = "${var.thisbucket} Encryption Key"
+  #   Owner       = "${var.owner}"
+  #   Purpose     = "Encryption Key for ${var.thisproject}"
+  #   EOLDate     = "${var.eoldate}"
+  #   Environment = "${var.environment}"
+  #   Prod        = "${var.isprod}"
+  #   CostCenter  = "${var.costcenter}"
+  #   Source      = "${var.src}"
+  # }
 }
 
 resource "aws_s3_bucket" "logbucket" {
   bucket = "${var.thisbucket}-log"
-  acl    = "private"
+  acl    = "log-delivery-write"
 
   tags = {
     Owner       = "${var.owner}"

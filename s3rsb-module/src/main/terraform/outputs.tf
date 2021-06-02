@@ -7,7 +7,7 @@ output "statebucket" {
 }
 
 
-output "loggingbucket" {
+output "logbucket" {
     value = aws_s3_bucket.logbucket
 }
 
