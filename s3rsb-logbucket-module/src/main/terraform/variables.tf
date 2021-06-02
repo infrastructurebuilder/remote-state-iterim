@@ -21,9 +21,3 @@ variable "environment" {
     description = "Environment of this deployment"
     type = string
 }
-
-variable "datadirpath" {
-    description = "Data directory, probably an environment variable from .envrc"
-    type = string
-}
-
