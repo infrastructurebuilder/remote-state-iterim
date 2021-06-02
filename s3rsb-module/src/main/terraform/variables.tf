@@ -1,10 +1,16 @@
 variable "thisbucket" {
-    description = "Bucket to create"
+    description = "Name of remote state bucket to create"
     type = string
 }
 
-variable "thispurpose" {
-    description = "Purpose for bucket"
+variable "isprod" {
+    description = "Set to yes if prod"
+    default = "yes"
+    type = string
+}
+
+variable "owner" {
+    description = "Owner of the resources"
     type = string
 }
 

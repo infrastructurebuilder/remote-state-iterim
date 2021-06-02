@@ -8,7 +8,7 @@
   </parent>
   <artifactId>s3rsb-module</artifactId>
   <packaging>pom</packaging>
-  <description>Module for building logging buckets for remote state buckets</description>
+  <description>Module for building State buckets for remote state buckets</description>
   <name>${project.artifactId}</name>
   <build>
     <plugins>

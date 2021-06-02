@@ -16,6 +16,8 @@
     <templating.engine.version>0.9.10</templating.engine.version>
     <velocity.templating.engine.version>0.9.8</velocity.templating.engine.version>
     <test.coverage.percentage.required>90</test.coverage.percentage.required>
+    <logging.target.prefix>log/</logging.target.prefix>
+    <state.target.prefix>tfstate/</state.target.prefix>
   </properties>
   <scm>
     <connection>scm:git:${git.url}</connection>
@@ -30,7 +32,6 @@
   <modules>
     <module>module-assembly</module>
     <module>s3rsb-module</module>
-    <module>s3rsb-rwroles-module</module>
   </modules>
   <build>
     <pluginManagement>
