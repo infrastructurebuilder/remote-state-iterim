@@ -6,7 +6,7 @@
     <artifactId>remote-state-iterim</artifactId>
     <version>0.9.4-SNAPSHOT</version>
   </parent>
-  <artifactId>s3rsb-logbucket-module</artifactId>
+  <artifactId>s3rsb-module</artifactId>
   <packaging>pom</packaging>
   <description>Module for building logging buckets for remote state buckets</description>
   <name>${project.artifactId}</name>

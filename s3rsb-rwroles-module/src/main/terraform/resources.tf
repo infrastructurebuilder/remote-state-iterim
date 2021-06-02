@@ -47,11 +47,33 @@ resource "aws_iam_policy" "read_bucket_policy" {
   name   = "rsb-${var.s3_bucket_name}-read"
   path   = "/"
   policy = data.aws_iam_policy_document.read_bucket.json
+  tags = {
+#    Name        = "rsb-${var.s3_bucket_name}-read"
+    Owner       = "${var.owner}"
+    Purpose     = "${var.thispurpose}"
+    EOLDate     = "${var.eoldate}"
+    Environment = "${var.environment}"
+    Prod        = "yes"
+    CostCenter  = "${var.costcenter}"
+    Source      = "${var.src}"
+  }
+
+
 }
 resource "aws_iam_policy" "write_bucket_policy" {
-  name   = "rsb-${var.s3_bucket_name}-read"
+  name   = "rsb-${var.s3_bucket_name}-write"
   path   = "/"
   policy = data.aws_iam_policy_document.write_bucket.json
+  tags = {
+#    Name        = "rsb-${var.s3_bucket_name}-write"
+    Owner       = "${var.owner}"
+    Purpose     = "${var.thispurpose}"
+    EOLDate     = "${var.eoldate}"
+    Environment = "${var.environment}"
+    Prod        = "yes"
+    CostCenter  = "${var.costcenter}"
+    Source      = "${var.src}"
+  }
 }
 
 resource "aws_iam_role" "readrole" {
@@ -59,7 +81,7 @@ resource "aws_iam_role" "readrole" {
   path               = "/tfstate/"
   assume_role_policy = data.aws_iam_policy_document.read_bucket_policy.json
   tags = {
-    Name        = "${var.thisproject} Logging Bucket"
+#    Name        = "${var.thisproject} Read Role"
     Owner       = "#operations"
     Purpose     = "Allows reads from ${var.s3_bucket_name} State Bucket"
     EOLDate     = "2050-12-31"
@@ -74,7 +96,7 @@ resource "aws_iam_role" "writerole" {
   name               = "rsb-${var.s3_bucket_name}-write"
   path               = "/tfstate/"
   tags = {
-    Name        = "${var.thisproject} Write Role"
+#    Name        = "${var.thisproject} Write Role"
     Owner       = "${var.owner}"
     Purpose     = "Allows writes to ${var.s3_bucket_name} State Bucket"
     EOLDate     = "2050-12-31"

@@ -29,7 +29,7 @@
   </ciManagement>
   <modules>
     <module>module-assembly</module>
-    <module>s3rsb-logbucket-module</module>
+    <module>s3rsb-module</module>
     <module>s3rsb-rwroles-module</module>
   </modules>
   <build>

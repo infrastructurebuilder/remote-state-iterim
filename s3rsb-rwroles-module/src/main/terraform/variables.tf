@@ -7,6 +7,13 @@ variable "costcenter" {
     }
 }
 
+
+variable "eoldate" {
+    description = "Destroy date"
+    default = "2050-12-01"
+    type = string
+}
+
 variable "owner" {
     description = "Owner of the resources"
     type = string

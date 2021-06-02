@@ -1,3 +1,19 @@
+variable "thisbucket" {
+    description = "Bucket to create"
+    type = string
+}
+
+variable "thispurpose" {
+    description = "Purpose for bucket"
+    type = string
+}
+
+variable "eoldate" {
+    description = "Destroy date"
+    default = "2050-12-01"
+    type = string
+}
+
 variable "costcenter" {
     default = "admin"
     description = "Cost center of these artifacts"

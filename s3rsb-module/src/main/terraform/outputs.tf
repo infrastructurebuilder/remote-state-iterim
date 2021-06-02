@@ -1,5 +1,5 @@
-output "rslogbucket" {
-    value = aws_s3_bucket.logbucket
+output "rsbbucket" {
+    value = aws_s3_bucket.thebucket
 }
 
 output "encryptionkey_arn" {

@@ -1,21 +1,31 @@
 resource "aws_kms_key" "encryptionkey" {
-  description             = "${var.thisproject} Encryption Key"
+  description             = "${var.thisbucket} Encryption Key"
   deletion_window_in_days = 30
   enable_key_rotation     = true
+  tags = {
+    Name        = "${var.thisbucket} Encryption Key"
+    Owner       = "${var.owner}"
+    Purpose     = "${var.thispurpose}"
+    EOLDate     = "${var.eoldate}"
+    Environment = "${var.environment}"
+    Prod        = "yes"
+    CostCenter  = "${var.costcenter}"
+    Source      = "${var.src}"
+  }
 }
 
-resource "aws_s3_bucket" "logbucket" {
-  bucket = "${var.thisproject}-log"
+resource "aws_s3_bucket" "thebucket" {
+  bucket = "${var.thisbucket}"
   acl    = "private"
 
   tags = {
-    Name        = "${var.thisproject} Logging Bucket"
-    Owner       = "#operations"
-    Purpose     = "Holds logs for ${var.thisproject} State Bucket"
-    EOLDate     = "2050-12-31"
-    Environment = "${var.environment}"    
+    Name        = "${var.thisbucket}"
+    Owner       = "${var.owner}"
+    Purpose     = "${var.thispurpose}"
+    EOLDate     = "${var.eoldate}"
+    Environment = "${var.environment}"
     Prod        = "yes"
-    CostCenter  = "devsecops"
+    CostCenter  = "${var.costcenter}"
     Source      = "${var.src}"
   }
 
