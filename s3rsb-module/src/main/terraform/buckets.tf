@@ -2,30 +2,30 @@ resource "aws_kms_key" "encryptionkey" {
   description             = "${var.thisbucket} Encryption Key"
   deletion_window_in_days = 30
   enable_key_rotation     = true
-  # tags = {
-  #   Name        = "${var.thisbucket} Encryption Key"
-  #   Owner       = "${var.owner}"
-  #   Purpose     = "Encryption Key for ${var.thisproject}"
-  #   EOLDate     = "${var.eoldate}"
-  #   Environment = "${var.environment}"
-  #   Prod        = "${var.isprod}"
-  #   CostCenter  = "${var.costcenter}"
-  #   Source      = "${var.src}"
-  # }
+  tags = {
+  Name        = "${var.thisbucket} Encryption Key"
+  Owner       = var.owner
+  EOLDate     = var.eoldate
+  Environment = var.environment
+  Prod        = var.isprod
+  CostCenter  = var.costcenter
+  Source      = var.src
+  }
 }
 
 resource "aws_s3_bucket" "logbucket" {
   bucket = "rsb-${var.thisbucket}-log"
   acl    = "log-delivery-write"
+  force_destroy = true
 
   tags = {
-    Owner       = "${var.owner}"
+    Owner       = var.owner
     Purpose     = "Logging Bucket for ${var.thisbucket}"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 
   versioning {
@@ -74,16 +74,17 @@ resource "aws_s3_bucket" "logbucket" {
 resource "aws_s3_bucket" "rsbbucket" {
   bucket = "rsb-${var.thisbucket}"
   acl    = "private"
+  force_destroy = false
 
   tags = {
-    Name        = "${var.thisbucket}"
-    Owner       = "${var.owner}"
+    Name        = var.thisbucket
+    Owner       = var.owner
     Purpose     = "Remote State Bucket for ${var.thisproject}"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 
   versioning {

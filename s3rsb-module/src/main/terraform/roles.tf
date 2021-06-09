@@ -54,13 +54,13 @@ resource "aws_iam_policy" "read_state_bucket_policy" {
   path   = "/"
   policy = data.aws_iam_policy_document.read_state_bucket.json
   tags = {
-    Owner       = "${var.owner}"
     Purpose     = "Read ${aws_s3_bucket.rsbbucket.id}"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    Owner       = var.owner
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 
 
@@ -71,13 +71,13 @@ resource "aws_iam_policy" "write_state_bucket_policy" {
   policy = data.aws_iam_policy_document.write_state_bucket.json
   tags = {
 #    Name        = "rsb-${aws_s3_bucket.rsbbucket.id}-write"
-    Owner       = "${var.owner}"
+    Owner       = var.owner
     Purpose     = "Write ${aws_s3_bucket.rsbbucket.id}"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 }
 
@@ -98,13 +98,13 @@ resource "aws_iam_role" "read_state_role" {
 }
 EOF
   tags = {
-    Owner       = "${var.owner}"
     Purpose     = "Allows reads from ${aws_s3_bucket.rsbbucket.id} State Bucket"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    Owner       = var.owner
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 }
 
@@ -130,13 +130,13 @@ resource "aws_iam_role" "write_state_role" {
 }
 EOF
   tags = {
-    Owner       = "${var.owner}"
     Purpose     = "Allows writes to ${aws_s3_bucket.rsbbucket.id} State Bucket"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    Owner       = var.owner
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 }
 resource "aws_iam_role_policy_attachment" "attach_write_state_role" {
@@ -199,13 +199,13 @@ resource "aws_iam_policy" "read_logging_bucket_policy" {
   policy = data.aws_iam_policy_document.read_logging_bucket.json
   tags = {
 #    Name        = "rsb-${var.s3_bucket_name}-read"
-    Owner       = "${var.owner}"
     Purpose     = "Read ${aws_s3_bucket.logbucket.id}"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    Owner       = var.owner
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 
 
@@ -215,13 +215,13 @@ resource "aws_iam_policy" "write_logging_bucket_policy" {
   path   = "/"
   policy = data.aws_iam_policy_document.write_logging_bucket.json
   tags = {
-    Owner       = "${var.owner}"
     Purpose     = "Write ${aws_s3_bucket.logbucket.id}"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    Owner       = var.owner
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 }
 
@@ -243,13 +243,13 @@ resource "aws_iam_role" "read_logging_role" {
 EOF
   tags = {
 #    Name        = "${var.thisproject} Read Role"
-    Owner       = "${var.owner}"
     Purpose     = "Allows reads from ${aws_s3_bucket.logbucket.id} Bucket"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    Owner       = var.owner
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 
 }
@@ -270,13 +270,13 @@ resource "aws_iam_role" "write_logging_role" {
 }
 EOF
   tags = {
-    Owner       = "${var.owner}"
     Purpose     = "Allows writes to ${aws_s3_bucket.logbucket.id} Bucket"
-    EOLDate     = "${var.eoldate}"
-    Environment = "${var.environment}"
-    Prod        = "${var.isprod}"
-    CostCenter  = "${var.costcenter}"
-    Source      = "${var.src}"
+    Owner       = var.owner
+    EOLDate     = var.eoldate
+    Environment = var.environment
+    Prod        = var.isprod
+    CostCenter  = var.costcenter
+    Source      = var.src
   }
 }
 
