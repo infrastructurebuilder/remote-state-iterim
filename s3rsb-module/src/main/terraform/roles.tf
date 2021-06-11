@@ -47,6 +47,18 @@ data "aws_iam_policy_document" "write_state_bucket" {
       "${aws_s3_bucket.rsbbucket.arn}/@state.target.prefix@*"
     ]
   }
+  statement {
+
+    actions = [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:DeleteItem"
+    ]
+
+    resources = [
+      "${aws_dynamodb_table.lock.arn}:*:*:/table/${var.thisbucket}"
+    ]
+  }
 }
 
 resource "aws_iam_policy" "read_state_bucket_policy" {
@@ -279,4 +291,5 @@ EOF
     Source      = var.src
   }
 }
+
 
