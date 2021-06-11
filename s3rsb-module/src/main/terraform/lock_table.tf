@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "lock" {
-  name           = var.thisbucket
+  name           = "rsb-${var.thisbucket}-lock"
   hash_key       = "LockID"
   read_capacity  = 20
   write_capacity = 20
@@ -10,7 +10,7 @@ resource "aws_dynamodb_table" "lock" {
   }
 
   tags = {
-    Name = "${var.thisbucket}"
+    Name = "rsb-${var.thisbucket}-lock"
     Owner       = var.owner
     Purpose     = "Remote State Lock Table ${var.thisbucket}"
     EOLDate     = var.eoldate
