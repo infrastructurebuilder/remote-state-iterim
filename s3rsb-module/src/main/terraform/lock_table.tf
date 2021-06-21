@@ -12,7 +12,7 @@ resource "aws_dynamodb_table" "lock" {
   tags = {
     Name = "rsb-${var.thisbucket}-lock"
     Owner       = var.owner
-    Purpose     = "Remote State Lock Table ${var.thisbucket}"
+    Purpose     = "Remote State Lock Table for rsb-${var.thisbucket}"
     EOLDate     = var.eoldate
     Environment = var.environment
     Prod        = var.isprod
