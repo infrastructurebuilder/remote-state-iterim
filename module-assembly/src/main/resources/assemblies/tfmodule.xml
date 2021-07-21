@@ -11,12 +11,12 @@
       <useDefaultExcludes>false</useDefaultExcludes>
       <outputDirectory>/</outputDirectory>
       <includes>
-        <include>**/.envrc</include>
+        <include>**/*</include>
       </includes>
       <excludes/>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
-      <directory>${project.build.directory}/dependency/</directory>
+      <directory>${basedir}/src/main/terraform</directory>
       <lineEnding>unix</lineEnding>
       <filtered>true</filtered>
       <nonFilteredFileExtensions/>
@@ -25,12 +25,12 @@
       <useDefaultExcludes>false</useDefaultExcludes>
       <outputDirectory>/</outputDirectory>
       <includes>
-        <include>**/*</include>
+        <include>**/.envrc</include>
       </includes>
       <excludes/>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
-      <directory>${basedir}/src/main/terraform</directory>
+      <directory>${project.build.directory}/dependency/</directory>
       <lineEnding>unix</lineEnding>
       <filtered>true</filtered>
       <nonFilteredFileExtensions/>
