@@ -26,6 +26,7 @@
       <outputDirectory>/</outputDirectory>
       <includes>
         <include>**/.envrc</include>
+        <include>**/provider.tf</include>
       </includes>
       <excludes/>
       <fileMode>0400</fileMode>
