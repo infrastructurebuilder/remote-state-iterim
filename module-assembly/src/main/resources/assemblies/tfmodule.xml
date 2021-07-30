@@ -19,7 +19,7 @@
       <directoryMode>0700</directoryMode>
       <directory>${project.build.directory}/dependency/</directory>
       <lineEnding>unix</lineEnding>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
       <nonFilteredFileExtensions/>
     </fileSet>
     <fileSet>
