@@ -12,7 +12,6 @@
       <outputDirectory>/</outputDirectory>
       <includes>
         <include>**/.envrc</include>
-        <include>**/provider.tf</include>
       </includes>
       <excludes/>
       <fileMode>0400</fileMode>
@@ -20,6 +19,20 @@
       <directory>${project.build.directory}/dependency/</directory>
       <lineEnding>unix</lineEnding>
       <filtered>false</filtered>
+      <nonFilteredFileExtensions/>
+    </fileSet>
+    <fileSet>
+      <useDefaultExcludes>false</useDefaultExcludes>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>**/provider.tf</include>
+      </includes>
+      <excludes/>
+      <fileMode>0400</fileMode>
+      <directoryMode>0700</directoryMode>
+      <directory>${project.build.directory}/dependency/</directory>
+      <lineEnding>unix</lineEnding>
+      <filtered>true</filtered>
       <nonFilteredFileExtensions/>
     </fileSet>
     <fileSet>
