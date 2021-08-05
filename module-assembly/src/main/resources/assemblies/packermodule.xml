@@ -8,28 +8,28 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <useDefaultExcludes>false</useDefaultExcludes>
+      <directory>${basedir}/src/main/packer</directory>
       <outputDirectory>/</outputDirectory>
+      <useDefaultExcludes>false</useDefaultExcludes>
       <includes>
         <include>**/*</include>
       </includes>
       <excludes/>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
-      <directory>${basedir}/src/main/packer</directory>
       <lineEnding>unix</lineEnding>
       <filtered>true</filtered>
     </fileSet>
     <fileSet>
-      <useDefaultExcludes>false</useDefaultExcludes>
+      <directory>${project.build.directory}/dependency/</directory>
       <outputDirectory>/</outputDirectory>
+      <useDefaultExcludes>false</useDefaultExcludes>
       <includes>
         <include>**/.envrc</include>
       </includes>
       <excludes/>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
-      <directory>${project.build.directory}/dependency/</directory>
       <lineEnding>unix</lineEnding>
       <filtered>false</filtered>
       <nonFilteredFileExtensions/>
