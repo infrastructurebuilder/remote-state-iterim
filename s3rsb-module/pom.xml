@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.infrastructurebuilder.terraform</groupId>
     <artifactId>remote-state-iterim</artifactId>
-    <version>0.9.22-SNAPSHOT</version>
+    <version>0.9.22</version>
   </parent>
   <artifactId>s3rsb-module</artifactId>
   <packaging>pom</packaging>
