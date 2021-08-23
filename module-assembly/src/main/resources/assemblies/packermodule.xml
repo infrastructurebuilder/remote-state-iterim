@@ -31,7 +31,7 @@
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
       <lineEnding>unix</lineEnding>
-      <filtered>false</filtered>
+      <filtered>true</filtered>
       <nonFilteredFileExtensions/>
     </fileSet>
     <!-- Includes target/.ssh -->

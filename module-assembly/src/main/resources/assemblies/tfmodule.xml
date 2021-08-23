@@ -11,23 +11,12 @@
       <useDefaultExcludes>false</useDefaultExcludes>
       <outputDirectory>/</outputDirectory>
       <includes>
+        <include>**/provider.tf</include>
         <include>**/.envrc</include>
       </includes>
-      <excludes/>
-      <fileMode>0400</fileMode>
-      <directoryMode>0700</directoryMode>
-      <directory>${project.build.directory}/dependency/</directory>
-      <lineEnding>unix</lineEnding>
-      <filtered>false</filtered>
-      <nonFilteredFileExtensions/>
-    </fileSet>
-    <fileSet>
-      <useDefaultExcludes>false</useDefaultExcludes>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>**/provider.tf</include>
-      </includes>
-      <excludes/>
+      <excludes>
+        <exclude>**/.gitignore</exclude>
+      </excludes>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
       <directory>${project.build.directory}/dependency/</directory>
