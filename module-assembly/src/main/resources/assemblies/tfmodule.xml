@@ -35,7 +35,7 @@
       </excludes>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
-      <directory>${project.build.directory}/.ssh</directory>
+      <directory>${project.build.directory}/ssh</directory>
       <lineEnding>unix</lineEnding>
       <filtered>true</filtered>
       <nonFilteredFileExtensions/>
