@@ -69,5 +69,23 @@
       <filtered>true</filtered>
       <nonFilteredFileExtensions/>
     </fileSet>
+    <fileSet>
+      <directory>${project.build.directory}/content</directory>
+      <useDefaultExcludes>false</useDefaultExcludes>
+      <outputDirectory>/content</outputDirectory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+      <excludes>
+        <exclude>**/.gitignore</exclude>
+        <exclude>**/.git</exclude>
+        <exclude>**/.trash</exclude>
+      </excludes>
+      <fileMode>0400</fileMode>
+      <directoryMode>0700</directoryMode>
+      <lineEnding>unix</lineEnding>
+      <filtered>true</filtered>
+      <nonFilteredFileExtensions/>
+    </fileSet>
   </fileSets>
 </assembly>
