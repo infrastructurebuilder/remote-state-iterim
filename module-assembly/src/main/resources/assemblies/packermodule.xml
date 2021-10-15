@@ -90,7 +90,7 @@
         <nonFilteredFileExtension>tgz</nonFilteredFileExtension>
         <nonFilteredFileExtension>gz</nonFilteredFileExtension>
         <nonFilteredFileExtension>tar</nonFilteredFileExtension>
-      </nonFilteredFileExtensions/>
+      </nonFilteredFileExtensions>
     </fileSet>
   </fileSets>
 </assembly>
