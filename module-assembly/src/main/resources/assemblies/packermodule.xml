@@ -85,7 +85,12 @@
       <directoryMode>0700</directoryMode>
       <lineEnding>unix</lineEnding>
       <filtered>true</filtered>
-      <nonFilteredFileExtensions/>
+      <nonFilteredFileExtensions>
+        <nonFilteredFileExtension>zip</nonFilteredFileExtension>
+        <nonFilteredFileExtension>tgz</nonFilteredFileExtension>
+        <nonFilteredFileExtension>gz</nonFilteredFileExtension>
+        <nonFilteredFileExtension>tar</nonFilteredFileExtension>
+      </nonFilteredFileExtensions/>
     </fileSet>
   </fileSets>
 </assembly>
