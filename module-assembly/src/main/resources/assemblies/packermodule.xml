@@ -80,6 +80,7 @@
         <exclude>**/.gitignore</exclude>
         <exclude>**/.git</exclude>
         <exclude>**/.trash</exclude>
+        <exclude>**/SECRET</exclude>
       </excludes>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
