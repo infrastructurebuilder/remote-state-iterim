@@ -1,6 +1,6 @@
 <assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
   <id>playbook</id>
   <formats>
     <format>zip</format>
@@ -11,10 +11,8 @@
       <directory>${project.build.directory}/dependency/</directory>
       <outputDirectory>/</outputDirectory>
       <useDefaultExcludes>false</useDefaultExcludes>
-      <includes>
-        <include>**/*</include>
-      </includes>
       <excludes>
+        <exclude>**/settings.xml</exclude>
         <exclude>**/.gitignore</exclude>
       </excludes>
       <fileMode>0400</fileMode>
@@ -24,32 +22,46 @@
     </fileSet>
     <!-- Includes target/.ssh -->
     <fileSet>
+      <directory>${project.build.directory}/ssh</directory>
       <useDefaultExcludes>false</useDefaultExcludes>
       <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>**/*</include>
-      </includes>
       <excludes>
         <exclude>**/.gitignore</exclude>
       </excludes>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
-      <directory>${project.build.directory}/ssh</directory>
       <lineEnding>unix</lineEnding>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
+      <directory>${project.build.directory}/additionalFiles</directory>
       <useDefaultExcludes>false</useDefaultExcludes>
       <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>**/*</include>
-      </includes>
       <excludes>
         <exclude>**/.gitignore</exclude>
       </excludes>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
-      <directory>${project.build.directory}/additionalFiles</directory>
+      <lineEnding>unix</lineEnding>
+      <filtered>true</filtered>
+      <nonFilteredFileExtensions>
+        <nonFilteredFileExtension>zip</nonFilteredFileExtension>
+        <nonFilteredFileExtension>tgz</nonFilteredFileExtension>
+        <nonFilteredFileExtension>gz</nonFilteredFileExtension>
+        <nonFilteredFileExtension>png</nonFilteredFileExtension>
+        <nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+        <nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
+      </nonFilteredFileExtensions>
+    </fileSet>
+    <fileSet>
+      <directory>${basedir}/src/main/resources</directory>
+      <outputDirectory>/</outputDirectory>
+      <useDefaultExcludes>false</useDefaultExcludes>
+      <excludes>
+        <exclude>**/settings.xml</exclude>
+      </excludes>
+      <fileMode>0400</fileMode>
+      <directoryMode>0700</directoryMode>
       <lineEnding>unix</lineEnding>
       <filtered>true</filtered>
       <nonFilteredFileExtensions>
@@ -66,20 +78,12 @@
       <outputDirectory>/</outputDirectory>
       <useDefaultExcludes>false</useDefaultExcludes>
       <includes>
-        <include>**/*</include>
+        <include>**/settings.xml</include>
       </includes>
       <fileMode>0400</fileMode>
       <directoryMode>0700</directoryMode>
       <lineEnding>unix</lineEnding>
-      <filtered>true</filtered>
-      <nonFilteredFileExtensions>
-        <nonFilteredFileExtension>zip</nonFilteredFileExtension>
-        <nonFilteredFileExtension>tgz</nonFilteredFileExtension>
-        <nonFilteredFileExtension>gz</nonFilteredFileExtension>
-        <nonFilteredFileExtension>png</nonFilteredFileExtension>
-        <nonFilteredFileExtension>jpg</nonFilteredFileExtension>
-        <nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
-      </nonFilteredFileExtensions>
+      <filtered>false</filtered>
     </fileSet>
   </fileSets>
 </assembly>
