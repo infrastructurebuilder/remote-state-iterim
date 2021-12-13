@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.infrastructurebuilder.terraform</groupId>
     <artifactId>remote-state-iterim</artifactId>
-    <version>0.10.3-SNAPSHOT</version>
+    <version>0.10.3</version>
   </parent>
   <artifactId>module-assembly</artifactId>
   <packaging>jar</packaging>
